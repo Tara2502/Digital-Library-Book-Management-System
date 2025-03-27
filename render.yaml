@@ -1,0 +1,18 @@
+services:
+  - name: digital-library-management-system
+    type: web
+    env: docker
+    repo: https://github.com/your-username/your-repo  # Replace with your actual GitHub repo URL
+    branch: main 
+    plan: free 
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:h2:mem:testdb
+      - key: SPRING_DATASOURCE_DRIVERCLASSNAME
+        value: org.h2.Driver
+      - key: SPRING_DATASOURCE_USERNAME
+        value: sa
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: ""
+      - key: SPRING_JPA_DATABASE_PLATFORM
+        value: org.hibernate.dialect.H2Dialect
