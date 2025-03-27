@@ -38,7 +38,7 @@ The *Digital Library Book Management System* is a Spring Boot-based application 
    
 4. *Access API* via Postman or Browser:
    
-   http://localhost:8080/api/books
+   http://localhost:8080/api/books/getAllBooks
 
 ##  Constraints
 - Book ID must be unique.
