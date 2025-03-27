@@ -4,8 +4,7 @@ FROM openjdk:17-jdk-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy Maven-related files
-COPY .mvn/ .mvn
+# Copy the Maven wrapper and project files (removed .mvn/ as it's missing)
 COPY mvnw pom.xml ./
 
 # Grant execution permissions for Maven wrapper
@@ -17,12 +16,8 @@ COPY src ./src
 # Build the application inside the container
 RUN ./mvnw clean package -DskipTests
 
-# Move to a minimal JDK image to reduce size
-FROM openjdk:17-jdk-slim
-WORKDIR /app
-
-# Copy only the built JAR file from the previous stage
-COPY --from=0 /app/target/digital-library-management-system-0.0.1-SNAPSHOT.jar app.jar
+# Copy the built JAR file into the container
+COPY target/digital-library-management-system-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the application's port
 EXPOSE 8080
