@@ -13,7 +13,7 @@ The *Digital Library Book Management System* is a Spring Boot-based application 
 
 ## Tech Stack
 - *Backend*: Java, Spring Boot
-- *Database*: MySQL / H2 (for in-memory testing)
+- *Database*: H2 (for in-memory testing)
 - *Build Tool*: Maven
 - *API Testing*: Postman
 
