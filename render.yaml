@@ -1,8 +1,8 @@
 services:
   - name: digital-library-management-system
+    runtime: docker
     type: web
-    env: docker
-    repo: https://github.com/your-username/your-repo  # Replace with your actual GitHub repo URL
+    repo: https://github.com/Tara2502/Digital-Library-Book-Management-System
     branch: main 
     plan: free 
     envVars:
